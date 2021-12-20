@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+</head>
+<body>
+<center>
+    <div id="app">
+        <input type="text" v-model="num">
+        <button v-on:click="num++">点我</button>
+        <h2>{{name}}被{{num}}个美女追!!!</h2>
+        <input type="checkbox" v-model="language" value="无尽之刃">无尽之刃<br/><br/>
+        <input type="checkbox" v-model="language" value="不朽盾弓">不朽盾弓<br/><br/>
+        <input type="checkbox" v-model="language" value="死亡之舞">死亡之舞<br/><br/>
+        你选择了:{{language.join(',')}}
+
+        <table>
+             <tr>
+                 <th>序号</th>
+                 <th>姓名</th>
+                 <th>性别</th>
+                 <th>sex</th>
+             </tr>
+            <tr v-for="(user,index) in users">
+                <td>{{user.name}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+
+</center>
+</body>
+<div style="width: 100px;height: 100px">
+    <video id="pc-video" muted="muted" autoplay="autoplay" loop="loop" playsinline="playsinline" webkit-playsinline="webkit-playsinline" x5-playsinline="x5-playsinline" poster="https://overwatch.nosdn.127.net/1/assets/img/pages/home/header-video-poster.jpg">
+        <source src="https://overwatch.nosdn.127.net/1/assets/img/pages/home/anniversary/header.webm" type="video/webm">
+
+    </video>
+</div>
+
+
+
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            name:"奥特曼",
+            num:100,
+            language:[],
+
+            users:[
+                {name:'柳岩', gender:'女', age: 21},
+                {name:'峰哥', gender:'男', age: 18},
+                {name:'范冰冰', gender:'女', age: 24},
+                {name:'刘亦菲', gender:'女', age: 18},
+                {name:'古力娜扎', gender:'女', age: 25}
+            ]
+        }
+    });
+</script>
+</html>
